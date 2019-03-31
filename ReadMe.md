@@ -1,5 +1,9 @@
 # Fonepay
 
+## Documentation
+
+https://docs.google.com/document/d/e/2PACX-1vQoPiR4invPzLumeixLndjkVW8MgYsQw2TZGJQQI8CXdrLf5lxrAvEBxzxqhPz7W-kMCs-JzBn4qVox/pub
+
 ## Dependency (Optional):
 
 You can use following fonepay java library.
