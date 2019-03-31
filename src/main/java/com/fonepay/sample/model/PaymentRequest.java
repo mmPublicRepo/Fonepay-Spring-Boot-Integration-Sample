@@ -42,4 +42,28 @@ public class PaymentRequest {
 
     @Column(name = "MD", length = 3)
     private String md;
+
+    @Column(name = "RESPONSE_BILL_ID", length = 100)
+    private String responseBillId;
+
+    @Column(name = "RESPONSE_FONEPAY_TRACE_ID", length = 12)
+    private String responseFonepayTraceId;
+
+    @Column(name = "RESPONSE_FONEPAY_VERIFICATION_RETURN_URL", length = 150)
+    private String responseFonepayVerificationReturnUrl;
+
+    @Column(name = "RESPONSE_PAID_FROM_BANK_CODE", length = 50)
+    private String responseCustomerPaidFromBankCode;
+
+    @Column(name = "RESPONSE_INITIATOR_CUSTOMER", length = 100)
+    private String responseInitiatorCustomer;
+
+    @Column(name = "RESPONSE_TOTAL_AMOUNT_PAID_BY_CUSTOMER", length = 18)
+    private String responseTotalAmountPaidByCustomer;
+
+    @Column(name = "RESPONSE_FONEPAY_MESSAGE", length = 255)
+    private String responseFonepayMessage;
+
+    @Column(name = "RESPONSE_FONEPAY_CODE", length = 50)
+    private String responseFonepayCode;
 }

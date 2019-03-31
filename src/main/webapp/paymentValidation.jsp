@@ -16,18 +16,11 @@
 
 <div class="container">
     <img src="https://dev-merchant-login.fonepay.com/assets/img/brand.png">
-    <h2>Pay Using Fonepay (Demo)</h2>
 
     <br>
     <a href="payment">Pay Using fonepay</a>
 
-    <c:forEach var="paymentRequest" items="${paymentList}">
-
-        <tr>
-            <td>${paymentRequest}</td>
-        </tr>
-
-    </c:forEach>
+    <p>${paymentVerificationMessage}</p>
 
 </div>
 

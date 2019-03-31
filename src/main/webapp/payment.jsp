@@ -16,8 +16,12 @@
 
 <div class="container">
     <img src="https://dev-merchant-login.fonepay.com/assets/img/brand.png">
+    <br>
     <h2>Pay Using Fonepay (Demo)</h2>
+    <h3>Pay for Unique Product Number:${paymentForm.productNumberPrn}</h3>
+    <b>(Note: Product Number Should be unique for every request to fonepay)</b>
 
+    <br>
     <form:form class="form-group" method="POST" action="${contextPath}/payment" modelAttribute="paymentForm">
 
         <spring:bind path="amountAmt">
@@ -34,7 +38,14 @@
                             maxlength="160"></form:input>
                 <form:errors path="remarks1"></form:errors>
             </div>
-        </spring:bind>
+
+        </spring:bind><spring:bind path="productNumberPrn">
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <form:input class="form-control" type="text" path="productNumberPrn" placeholder="PRN"
+                        readonly="true"></form:input>
+            <form:errors path="productNumberPrn"></form:errors>
+        </div>
+    </spring:bind>
 
 
         <button class="btn btn-lg btn-danger btn-block" type="submit">Pay using Fonepay</button>
