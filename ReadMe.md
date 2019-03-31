@@ -16,7 +16,7 @@ https://github.com/fonepay/Fonepay-Java
         
    Gradle:
      
-     compile group: 'com.fonepay', name: 'payment', version: '0.2'
+     compile group: 'com.fonepay', name: 'payment', version: '0.3'
 
 ## Test Server
 
