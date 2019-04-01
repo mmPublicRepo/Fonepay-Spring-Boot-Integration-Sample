@@ -17,6 +17,11 @@
 <div class="container">
     <img src="https://dev-merchant-login.fonepay.com/assets/img/brand.png">
     <br>
+
+    <a href="payment">Pay Using fonepay</a>
+    <br>
+    <a href="/">Home</a>
+
     <h2>Pay Using Fonepay (Demo)</h2>
     <h3>Pay for Unique Product Number:${paymentForm.productNumberPrn}</h3>
     <b>(Note: Product Number Should be unique for every request to fonepay)</b>

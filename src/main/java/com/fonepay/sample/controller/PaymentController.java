@@ -145,6 +145,7 @@ public class PaymentController {
                     "product number:" + paymentRequest.getProductNumberPrn();
         }
         model.addAttribute("paymentVerificationMessage", paymentVerificationMessage);
+        model.addAttribute("paymentRequest", paymentRequest);
         return "paymentValidation";
     }
 
