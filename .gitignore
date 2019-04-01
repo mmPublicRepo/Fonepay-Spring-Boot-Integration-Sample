@@ -1,10 +1,5 @@
 /target/
-!/.idea/runConfigurations/
 !.mvn/wrapper/maven-wrapper.jar
-!/.idea/runConfigurations/WebApplication_Test_Server.xml
-!/.idea/runConfigurations/Tomcat_9_0_13.xml
-!/.idea/runConfigurations/clean_package.xml
-!/.idea/runConfigurations/WebApplication_Live.xml
 
 ### STS ###
 .apt_generated
