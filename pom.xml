@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.fonepay</groupId>
-    <artifactId>sample</artifactId>
+    <artifactId>fonepaySample</artifactId>
     <version>0.3</version>
     <name>sample</name>
     <packaging>war</packaging>
