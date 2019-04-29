@@ -1,5 +1,7 @@
 # Fonepay
 
+Fonepay Demo Website: https://devsampleproject.fonepay.com/fonepaySample/
+
 ## Documentation
 
 https://docs.google.com/document/d/e/2PACX-1vQoPiR4invPzLumeixLndjkVW8MgYsQw2TZGJQQI8CXdrLf5lxrAvEBxzxqhPz7W-kMCs-JzBn4qVox/pub
@@ -22,12 +24,12 @@ https://github.com/fonepay/Fonepay-Java
      
      compile group: 'com.fonepay', name: 'payment', version: '0.3'
 
-## Test Server
+## Test Server url
 
 Merchant Login Test: https://dev-merchant-login.fonepay.com/#/
      
-## Live
+## Live Server url
 
-Website Url: https://fonepay.com/
+Payment Url: https://fonepay.com/
 
 Merchant Login Live: https://login.fonepay.com/#/
