@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
-import java.util.UUID;
+import java.security.SecureRandom;
 
 @Controller
 public class PaymentController {
@@ -47,11 +47,21 @@ public class PaymentController {
     @GetMapping("/payment")
     public String paymentGet(Model model) {
         PaymentRequest paymentRequest = new PaymentRequest();
-        paymentRequest.setProductNumberPrn(UUID.randomUUID().toString().replace("-", ""));
+
+        paymentRequest.setProductNumberPrn(randomString(15));
 
         model.addAttribute("paymentForm", paymentRequest);
 
         return "payment";
+    }
+
+    private String randomString(int len) {
+        final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        SecureRandom rnd = new SecureRandom();
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++)
+            sb.append(AB.charAt(rnd.nextInt(AB.length())));
+        return sb.toString();
     }
 
     // Step 1A
@@ -109,7 +119,7 @@ public class PaymentController {
 
         String fonepayUrlForPaymentVerification = FonepayService.generateFonepayUrlForPaymentVerificationRequest(fonepayPaymentVerification);
 
-        String paymentVerificationMessage = "";
+        String paymentVerificationMessage;
         FonepayPaymentVerificationResponse fonepayPaymentVerificationResponse;
         try {
             RestTemplate restTemplate = new RestTemplate();
@@ -130,19 +140,9 @@ public class PaymentController {
         }
 
         if (fonepayPaymentVerificationResponse.getResponse_code().equalsIgnoreCase("successful")) {
-            paymentVerificationMessage = "Payment was successful for fonepay " +
-                    "traceId:" + paymentRequest.getResponseFonepayTraceId() + "," +
-                    "amount:" + paymentRequest.getAmountAmt() + "," +
-                    "total Amount:" + paymentRequest.getResponseTotalAmountPaidByCustomer() + "," +
-                    "message:" + paymentRequest.getResponseFonepayMessage() + "," +
-                    "product number:" + paymentRequest.getProductNumberPrn();
+            paymentVerificationMessage = "Payment was successful fonepay ";
         } else {
-            paymentVerificationMessage = "Payment failed for fonepay " +
-                    "traceId:" + paymentRequest.getResponseFonepayTraceId() + "," +
-                    "amount:" + paymentRequest.getAmountAmt() + "," +
-                    "total Amount:" + paymentRequest.getResponseTotalAmountPaidByCustomer() + "," +
-                    "message:" + paymentRequest.getResponseFonepayMessage() + "," +
-                    "product number:" + paymentRequest.getProductNumberPrn();
+            paymentVerificationMessage = "Payment failed fonepay ";
         }
         model.addAttribute("paymentVerificationMessage", paymentVerificationMessage);
         model.addAttribute("paymentRequest", paymentRequest);

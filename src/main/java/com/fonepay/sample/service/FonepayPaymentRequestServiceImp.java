@@ -20,7 +20,7 @@ public class FonepayPaymentRequestServiceImp implements FonepayPaymentRequestSer
 
     @Override
     public List<PaymentRequest> getPaymentRequestList() {
-        return paymentRequestRepository.findAll();
+        return paymentRequestRepository.findFirst20ByOrderByProductNumberPrnDesc();
     }
 
     @Override
