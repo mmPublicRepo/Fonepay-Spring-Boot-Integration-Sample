@@ -22,56 +22,62 @@
     <a href="payment">Pay Using fonepay</a>
     <br>
     <a href="/">Home</a>
+    <br>
 
-    <div class="table-responsive">
-        <table class="table table-striped w-auto">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">MERCHANT_CODE_PID</th>
-                <th scope="col">PRODUCT_NUMBER_PRN</th>
-                <th scope="col">AMOUNT_AMT</th>
-                <th scope="col">DATE_DT</th>
-                <th scope="col">REMARKS_1_R1</th>
-                <th scope="col">REMARKS_2_R2</th>
+    <c:forEach var="paymentRequest" items="${paymentList}">
 
-                <th scope="col">RESPONSE_BILL_ID</th>
-                <th scope="col">RESPONSE_FONEPAY_TRACE_ID</th>
-                <th scope="col">RESPONSE_FONEPAY_VERIFICATION_RETURN_URL</th>
-                <th scope="col">RESPONSE_PAID_FROM_BANK_CODE</th>
-                <th scope="col">RESPONSE_INITIATOR_CUSTOMER</th>
-                <th scope="col">RESPONSE_TOTAL_AMOUNT_PAID_BY_CUSTOMER</th>
-                <th scope="col">RESPONSE_FONEPAY_MESSAGE</th>
-                <th scope="col">RESPONSE_FONEPAY_CODE</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="jumbotron">
 
-            <c:forEach var="paymentRequest" items="${paymentList}">
+            <b>#</b>
+                ${paymentRequest.id} <br>
 
-                <tr>
-                    <td>${paymentRequest.id}</td>
-                    <td>${paymentRequest.merchantCodePid}</td>
-                    <td>${paymentRequest.productNumberPrn}</td>
-                    <td>${paymentRequest.amountAmt}</td>
-                    <td>${paymentRequest.dateDt}</td>
-                    <td>${paymentRequest.remarks1}</td>
-                    <td>${paymentRequest.remarks2}</td>
+            <b>RESPONSE_FONEPAY_TRACE_ID:</b>
+                ${paymentRequest.responseFonepayTraceId} <br>
 
-                    <td>${paymentRequest.responseBillId}</td>
-                    <td>${paymentRequest.responseFonepayTraceId}</td>
-                    <td>${paymentRequest.responseFonepayVerificationReturnUrl}</td>
-                    <td>${paymentRequest.responseCustomerPaidFromBankCode}</td>
-                    <td>${paymentRequest.responseInitiatorCustomer}</td>
-                    <td>${paymentRequest.responseTotalAmountPaidByCustomer}</td>
-                    <td>${paymentRequest.responseFonepayMessage}</td>
-                    <td>${paymentRequest.responseFonepayCode}</td>
-                </tr>
+            <b>MERCHANT_CODE_PID: </b>
+                ${paymentRequest.merchantCodePid} <br>
 
-            </c:forEach>
-            </tbody>
-        </table>
-    </div>
+            <b>PRODUCT_NUMBER_PRN: </b>
+                ${paymentRequest.productNumberPrn} <br>
+
+            <b>AMOUNT_AMT: </b>
+                ${paymentRequest.amountAmt} <br>
+
+            <b>DATE_DT: </b>
+                ${paymentRequest.dateDt} <br>
+
+            <b>REMARKS_1_R1: </b>
+                ${paymentRequest.remarks1} <br>
+
+            <b>REMARKS_2_R2: </b>
+                ${paymentRequest.remarks2} <br>
+
+            <b>RESPONSE_BILL_ID: </b>
+                ${paymentRequest.responseBillId} <br>
+
+            <b>RESPONSE_FONEPAY_VERIFICATION_RETURN_URL: </b>
+                ${paymentRequest.responseFonepayVerificationReturnUrl} <br>
+
+            <b>RESPONSE_PAID_FROM_BANK_CODE: </b>
+                ${paymentRequest.responseCustomerPaidFromBankCode} <br>
+
+            <b>RESPONSE_INITIATOR_CUSTOMER: </b>
+                ${paymentRequest.responseInitiatorCustomer} <br>
+
+            <b>RESPONSE_TOTAL_AMOUNT_PAID_BY_CUSTOMER: </b>
+                ${paymentRequest.responseTotalAmountPaidByCustomer} <br>
+
+            <b>RESPONSE_FONEPAY_MESSAGE: </b>
+                ${paymentRequest.responseFonepayMessage} <br>
+
+            <b>RESPONSE_FONEPAY_CODE: </b>
+                ${paymentRequest.responseFonepayCode} <br>
+
+        </div>
+
+        <hr>
+    </c:forEach>
+
 
 </div>
 

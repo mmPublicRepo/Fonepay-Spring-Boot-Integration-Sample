@@ -23,25 +23,31 @@
     <br>
     <a href="/">Home</a>
 
-    <p><b> ${paymentVerificationMessage} </b></p>
+    <div class="jumbotron">
 
+        <p><b> ${paymentVerificationMessage} </b></p>
 
-    <p> #ID : <b> ${paymentRequest.id} </b></p>
-    <p> MERCHANT_CODE_PID: <b> ${paymentRequest.merchantCodePid} </b></p>
-    <p> PRODUCT_NUMBER_PRN: <b> ${paymentRequest.productNumberPrn} </b></p>
-    <p> AMOUNT_AMT: <b> ${paymentRequest.amountAmt} </b></p>
-    <p> DATE_DT: <b> ${paymentRequest.dateDt.toString()} </b></p>
-    <p> REMARKS_1_R1: <b> ${paymentRequest.remarks1} </b></p>
-    <p> REMARKS_2_R2: <b> ${paymentRequest.remarks2} </b></p>
+        <p> ID : <b> ${paymentRequest.id} </b></p>
 
-    <p> RESPONSE_BILL_ID: <b> ${paymentRequest.responseBillId} </b></p>
-    <p> RESPONSE_FONEPAY_TRACE_ID: <b> ${paymentRequest.responseFonepayTraceId} </b></p>
-    <p> RESPONSE_FONEPAY_VERIFICATION_RETURN_URL : <b> ${paymentRequest.responseFonepayVerificationReturnUrl} </b></p>
-    <p> RESPONSE_PAID_FROM_BANK_CODE : <b> ${paymentRequest.responseCustomerPaidFromBankCode} </b></p>
-    <p>RESPONSE_INITIATOR_CUSTOMER : <b> ${paymentRequest.responseInitiatorCustomer} </b></p>
-    <p> RESPONSE_TOTAL_AMOUNT_PAID_BY_CUSTOMER : <b> ${paymentRequest.responseTotalAmountPaidByCustomer} </b></p>
-    <p> RESPONSE_FONEPAY_MESSAGE : <b> ${paymentRequest.responseFonepayMessage} </b></p>
-    <p> RESPONSE_FONEPAY_CODE : <b> ${paymentRequest.responseFonepayCode} </b></p>
+        <p> RESPONSE_FONEPAY_TRACE_ID: <b> ${paymentRequest.responseFonepayTraceId} </b></p>
+        <p> RESPONSE_FONEPAY_MESSAGE : <b> ${paymentRequest.responseFonepayMessage} </b></p>
+        <p> RESPONSE_FONEPAY_CODE : <b> ${paymentRequest.responseFonepayCode} </b></p>
+        <p> AMOUNT_AMT: <b> ${paymentRequest.amountAmt} </b></p>
+        <p> RESPONSE_TOTAL_AMOUNT_PAID_BY_CUSTOMER : <b> ${paymentRequest.responseTotalAmountPaidByCustomer} </b></p>
+        <p> RESPONSE_PAID_FROM_BANK_CODE : <b> ${paymentRequest.responseCustomerPaidFromBankCode} </b></p>
+        <p>RESPONSE_INITIATOR_CUSTOMER : <b> ${paymentRequest.responseInitiatorCustomer} </b></p>
+
+        <p> MERCHANT_CODE_PID: <b> ${paymentRequest.merchantCodePid} </b></p>
+        <p> PRODUCT_NUMBER_PRN: <b> ${paymentRequest.productNumberPrn} </b></p>
+        <p> DATE_DT: <b> ${paymentRequest.dateDt.toString()} </b></p>
+        <p> REMARKS_1_R1: <b> ${paymentRequest.remarks1} </b></p>
+        <p> REMARKS_2_R2: <b> ${paymentRequest.remarks2} </b></p>
+
+        <p> RESPONSE_BILL_ID: <b> ${paymentRequest.responseBillId} </b></p>
+        <p> RESPONSE_FONEPAY_VERIFICATION_RETURN_URL : <b> ${paymentRequest.responseFonepayVerificationReturnUrl} </b>
+        </p>
+
+    </div>
 
 </div>
 
