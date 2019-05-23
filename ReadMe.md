@@ -1,6 +1,6 @@
 # Fonepay
 
-Fonepay Demo Website: https://devsampleproject.fonepay.com/fonepaySample/
+Fonepay Demo Website: https://devsampleproject.fonepay.com/fonepaySample/payment
 
 ## Documentation
 
