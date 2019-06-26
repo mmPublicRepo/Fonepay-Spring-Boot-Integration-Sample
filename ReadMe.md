@@ -30,6 +30,10 @@ Merchant Login Test: https://dev-merchant-login.fonepay.com/#/
      
 ## Live Server url
 
-Payment Url: https://fonepay.com/
+Fonepay Url: https://fonepay.com/
 
 Merchant Login Live: https://login.fonepay.com/#/
+
+How to register for live from fonepay app: https://www.youtube.com/watch?v=XqBv-ePouJA
+
+Register for live from fonepay website: https://login.fonepay.com/#/signup
