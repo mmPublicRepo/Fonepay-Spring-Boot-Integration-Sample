@@ -6,17 +6,14 @@ import com.fonepay.model.FonepayPaymentRequestBuilder;
 import com.fonepay.sample.model.PaymentRequest;
 import com.fonepay.sample.service.FonepayPaymentRequestService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(path = "/fonepay")
+@RequestMapping(path = "api/fonepay")
 public class PaymentRestController {
 
     private final FonepayPaymentRequestService fonepayPaymentRequestService;
@@ -70,5 +67,10 @@ public class PaymentRestController {
         for (int i = 0; i < len; i++)
             sb.append(AB.charAt(rnd.nextInt(AB.length())));
         return sb.toString();
+    }
+
+    @GetMapping(path = "/getByFonepayTraceId", consumes = "application/json", produces = "application/json")
+    public PaymentRequest getByFonepayTraceId(@RequestParam("fonepayTraceId") Long fonepayTraceId) {
+        return fonepayPaymentRequestService.getByFonepayTraceIdNativeQuery(fonepayTraceId);
     }
 }

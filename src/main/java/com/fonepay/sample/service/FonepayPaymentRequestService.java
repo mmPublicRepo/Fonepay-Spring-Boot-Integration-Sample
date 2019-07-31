@@ -11,4 +11,5 @@ public interface FonepayPaymentRequestService {
 
     PaymentRequest savePaymentRequest(PaymentRequest paymentRequest);
 
+    PaymentRequest getByFonepayTraceIdNativeQuery(Long fonepayTraceId);
 }

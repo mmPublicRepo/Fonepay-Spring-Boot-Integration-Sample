@@ -47,10 +47,10 @@
                 ${paymentRequest.dateDt} <br>
 
             <b>REMARKS_1_R1: </b>
-                ${paymentRequest.remarks1} <br>
+            <c:out value="${paymentRequest.remarks1}"/><br>
 
             <b>REMARKS_2_R2: </b>
-                ${paymentRequest.remarks2} <br>
+            <c:out value="${paymentRequest.remarks2}"/><br>
 
             <b>RESPONSE_BILL_ID: </b>
                 ${paymentRequest.responseBillId} <br>
