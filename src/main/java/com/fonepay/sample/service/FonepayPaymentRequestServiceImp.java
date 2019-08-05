@@ -28,4 +28,9 @@ public class FonepayPaymentRequestServiceImp implements FonepayPaymentRequestSer
         return paymentRequestRepository.save(paymentRequest);
     }
 
+    @Override
+    public PaymentRequest getByFonepayTraceIdNativeQuery(Long fonepayTraceId) {
+        return paymentRequestRepository.getByFonepayTraceIdNativeQuery(fonepayTraceId);
+    }
+
 }

@@ -40,7 +40,7 @@
         <spring:bind path="remarks1">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input class="form-control" type="text" path="remarks1" placeholder="Payment Remarks"
-                            maxlength="160"></form:input>
+                            maxlength="160" htmlEscape="true"></form:input>
                 <form:errors path="remarks1"></form:errors>
             </div>
 

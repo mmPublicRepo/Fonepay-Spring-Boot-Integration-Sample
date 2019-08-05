@@ -97,14 +97,13 @@ public class PaymentController {
     public String paymentValidate(@RequestParam("PRN") String productNumberPrn,
                                   @RequestParam("BID") String billId,
                                   @RequestParam("UID") String fonepayTraceIdUid,
-                                  @RequestParam("RU") String fonepayVerificationReturnUrl,
                                   Model model
     ) {
 
         PaymentRequest paymentRequest = fonepayPaymentRequestService.getPaymentRequestByPrn(productNumberPrn);
         paymentRequest.setResponseFonepayTraceId(fonepayTraceIdUid);
         paymentRequest.setResponseBillId(billId);
-        paymentRequest.setResponseFonepayVerificationReturnUrl(fonepayVerificationReturnUrl);
+        paymentRequest.setResponseFonepayVerificationReturnUrl(fonepayPaymentUrl);
 
         FonepayPaymentVerificationRequest fonepayPaymentVerification =
                 FonepayPaymentVerificationRequestBuilder.aFonepayPaymentVerificationRequest()
@@ -112,7 +111,7 @@ public class PaymentController {
                         .withMerchantCodePid(merchantCodePID)
                         .withBillIdBid(billId)
                         .withFonepayTraceIdUniqueUid(fonepayTraceIdUid)
-                        .withFonepayVerificationUrl(fonepayVerificationReturnUrl)
+                        .withFonepayVerificationUrl(fonepayPaymentUrl)
                         .withMerchantRequestedAmountAmt(paymentRequest.getAmountAmt() + "")
                         .withMerchantSecretKey(merchantSecretKey)
                         .build();

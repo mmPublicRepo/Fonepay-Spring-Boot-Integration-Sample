@@ -40,8 +40,8 @@
         <p> MERCHANT_CODE_PID: <b> ${paymentRequest.merchantCodePid} </b></p>
         <p> PRODUCT_NUMBER_PRN: <b> ${paymentRequest.productNumberPrn} </b></p>
         <p> DATE_DT: <b> ${paymentRequest.dateDt.toString()} </b></p>
-        <p> REMARKS_1_R1: <b> ${paymentRequest.remarks1} </b></p>
-        <p> REMARKS_2_R2: <b> ${paymentRequest.remarks2} </b></p>
+        <p> REMARKS_1_R1: <b>  <c:out value="${paymentRequest.remarks1}"/> </b></p>
+        <p> REMARKS_2_R2: <b>  <c:out value="${paymentRequest.remarks2}"/> </b></p>
 
         <p> RESPONSE_BILL_ID: <b> ${paymentRequest.responseBillId} </b></p>
         <p> RESPONSE_FONEPAY_VERIFICATION_RETURN_URL : <b> ${paymentRequest.responseFonepayVerificationReturnUrl} </b>

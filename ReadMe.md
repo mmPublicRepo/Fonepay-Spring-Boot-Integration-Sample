@@ -17,12 +17,12 @@ https://github.com/fonepay/Fonepay-Java
         <dependency>
             <groupId>com.fonepay</groupId>
             <artifactId>payment</artifactId>
-            <version>0.3</version>
+            <version>0.9</version>
         </dependency>
         
    Gradle:
      
-     compile group: 'com.fonepay', name: 'payment', version: '0.3'
+     compile group: 'com.fonepay', name: 'payment', version: '0.9'
 
 ## Test Server url
 
